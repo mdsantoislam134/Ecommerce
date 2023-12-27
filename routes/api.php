@@ -21,10 +21,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 
-// web php route 
 
-
-Route::post('/add-delivery-option', [DeliveryOptionController::class, 'add_delivery_option']);
+// web php 
+Route::get('/catagory-list', [CatagoryController::class, 'catalist']);
 
 
 
@@ -33,5 +32,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('/shop-details', [ShopDeteilsController::class, 'add_details']);
 Route::post('/add-product', [ProductController::class, 'add_product']);
 Route::post('/add-package', [ProductPackageController::class, 'add_package']);
+
 
  });

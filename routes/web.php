@@ -53,7 +53,6 @@ Route::get('/logout', [WebUserController::class, 'logout'])->name('logout');
 
 // user routes 
 Route::get('User/login', [WebUserController::class, 'loginview'])->name('userlogin');
-
 Route::post('/login', [WebUserController::class, 'login'])->name('login');
 
 

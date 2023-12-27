@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->('');
+            $table->string('order_id');
+            $table->foreignId('productPackage_id')->constrained('product_packages');
+            $table->foreignId('buyer_id')->constrained('users');
+            $table->string('order_status');
             $table->timestamps();
         });
     }

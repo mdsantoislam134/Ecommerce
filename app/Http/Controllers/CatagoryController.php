@@ -8,17 +8,31 @@ use App\Models\SubCatagory;
 class CatagoryController extends Controller
 {
     
-     
-    public function add_cata(Request $request){
-
-        $cata = New Catagory;
+    public function add_cata(Request $request)
+    {
+        $request->validate([
+            'catagory' => 'required',
+            'cata_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        
+        $cata = new Catagory;
         $cata->catagory = $request->catagory;
-        $cata->items_count = 0 ;
+    
+        if ($request->hasFile('cata_image')) {
+            $photo = $request->file('cata_image');
+            $imageName = time() . '.' . $photo->getClientOriginalExtension();
+            $photo->move('catagoryimage', $imageName);
+    
+            $cata->catagory_image = $imageName;
+        }
+    
+        $cata->items_count = 0;
         $cata->save();
-
-        return redirect('Catagory')->with('massage', "Category Added!");
-       
+    
+        return redirect('Catagory')->with('message', 'Category Added!');
     }
+    
 
 
     public function addcata(){
@@ -53,6 +67,20 @@ class CatagoryController extends Controller
 //   }
 
 
+
+
+//   Retrive cata List 
+
+
+public function catalist(){
+
+    $cata = Catagory::with('subcatagory')->get();;
+    
+    return response()->json(['data' => $cata]);
+
+}
+
+ 
 
 
 

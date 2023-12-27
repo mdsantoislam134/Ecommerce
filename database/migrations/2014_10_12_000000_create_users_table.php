@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number')->unique();
             $table->string('password');
+            $table->string('balance');
             $table->string('user_type');
             $table->rememberToken();
             $table->timestamps();

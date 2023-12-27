@@ -12,7 +12,7 @@
                         <thead>
                           <tr>
                             <th>Catagory</th>
-                            <th>Created</th>
+                            <th>Category Image</th>
                             <th>Status</th>
                           </tr>
                         </thead>
@@ -20,7 +20,7 @@
                           @foreach($cata as $all)
                           <tr>
                             <td>{{$all->catagory}}</td>
-                            <td>{{$all->created_at}}</td>
+                            <td> <img src="catagoryimage/{{$all->catagory_image}}" alt="" srcset=""></td>
                             <td><a href="{{url('Sub-Catagory',$all->id)}}" class="btn btn-success m-0 ">Sub Catagory</a></td>
                             <!-- <td><a href="{{url('Delete-Catagory',$all->id)}}" class="btn btn-danger m-0">Delete</a></td> -->
                           </tr>
