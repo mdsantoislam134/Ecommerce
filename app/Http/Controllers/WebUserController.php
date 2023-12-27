@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
+class WebUserController
+{
+     public function loginview(){
+        return view('user.login');
+     }
+
+
+     public function login(Request $request)
+     {
+         $credentials = $request->only('email', 'password');
+     
+         if (Auth::attempt($credentials)) {
+             $user = $request->user();
+     
+             if ($user->user_type == "Admin") {
+                 Auth::logout();
+                 return redirect()->back()->with('error', "Invalid User");
+             }
+     
+             return redirect('home');
+         }
+     
+         return redirect()->back()->with('error', "Invalid User");
+     }
+     
+    
+   
+        
+
+     
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('home')->with('message', 'Logged Out');
+    }
+    
+
+
+
+}
