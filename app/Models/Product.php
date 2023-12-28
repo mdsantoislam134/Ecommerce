@@ -12,7 +12,6 @@ class Product extends Model
     protected $fillable = [
         'user_id',
         'category_id',
-        'sub_category_id',
         'product_name',
         'product_details',
         'product_img',
@@ -28,6 +27,10 @@ class Product extends Model
     public function catagory()
     {
         return $this->belongsTo(Catagory::class,'catagori_id');
+    }
+    public function productimg()
+    {
+        return $this->hasMany(ProductImage::class,'product_id');
     }
 
     public function subCategory()

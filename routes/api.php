@@ -23,6 +23,8 @@ Route::post('/login', [AuthController::class, 'login']);
 
 
 // web php 
+Route::post('/add-sub-catagory/{id}', [CatagoryController::class, 'add_sub_cata']);
+Route::post('/add-catagory', [CatagoryController::class, 'add_cata']);
 Route::get('/catagory-list', [CatagoryController::class, 'catalist']);
 
 

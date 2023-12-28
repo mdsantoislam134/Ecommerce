@@ -21,8 +21,9 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->errors()], 400);
+            return response()->json(['error' => $validator->errors()], 405);
         }
+
         $user = new User;
         $user->full_name = $request->full_name;
         $user->store_name = $request->store_name;
@@ -47,6 +48,6 @@ class AuthController extends Controller
             return response()->json(['user' => $user, 'token' => $token], 200);
         }
 
-        return response()->json(['error' => 'Tui paris nai'], 401);
+        return response()->json(['error' => 'Invalid User'], 402);
     }
 }

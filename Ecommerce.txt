@@ -1,0 +1,53 @@
+ register api
+post  = http://127.0.0.1:8000/api/register
+Fileds = full_name,email,password,phone_number,user_type 
+
+Usertype = buyer,seller;
+
+ Login api
+post  = http://127.0.0.1:8000/api/login
+Fileds = email,password
+
+
+
+ Category api
+post  = http://127.0.0.1:8000/api/add-catagory
+Fileds = catagory,cata_image
+
+
+ Sub Category api
+post  = http://127.0.0.1:8000/api/add-sub-catagory/{$id}=>catagoryid
+Fileds = subcata
+
+
+
+
+ Shop Ditels api
+post  = http://127.0.0.1:8000/api/shop-details
+Fileds = shop_name,shop_img,shop_address,tin_number,bin_number,owner_name,owner_nid,owner_phone,email,phone_verify,email_verify,tow_factor
+
+
+
+
+ Add Product api
+post  = http://127.0.0.1:8000/api/add-product
+Fileds = user_id,catagori_id,sub_catagorie_id,prduct_name,prduct_details,prduct_price,prduct_quantity,file=>images[]
+
+
+
+
+
+ Add Package api
+post  = http://127.0.0.1:8000/api/add-package
+Fileds = product-Id => products[],package_name,policy_id,delivery_option_id,package_price
+
+
+
+
+
+ Get Category List api
+Get = http://127.0.0.1:8000/api/catagory-list
+
+
+
+

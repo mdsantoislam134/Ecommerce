@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('catagori_id')->constrained('catagories');
+            $table->foreignId('sub_catagorie_id')->constrained('sub_catagories');
             $table->string('prduct_name');
             $table->string('prduct_details');
             $table->string('prduct_price');

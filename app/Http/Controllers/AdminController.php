@@ -40,13 +40,13 @@ class AdminController extends Controller
 
 
         public function home(){
-            return view('admin.dashboard');
+            return view('Admin.dashboard');
         }
 
 
     public function showcata(){
        $catagory = Catagory::all();
-        return view('admin.catagory',['cata'=>$catagory]);
+        return view('Admin.catagory',['cata'=>$catagory]);
     }
 
 
