@@ -30,7 +30,7 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->phone_number = $request->phone_number;
         $user->user_type = $request->user_type;
-        $user->balance = 0;
+        $user->balance = "0";
         $user->password = bcrypt($request->password);
         $user->save();
         $token = $user->createToken('MyApp')->plainTextToken;
