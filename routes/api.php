@@ -34,6 +34,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('/shop-details', [ShopDeteilsController::class, 'add_details']);
 Route::post('/add-product', [ProductController::class, 'add_product']);
 Route::post('/add-package', [ProductPackageController::class, 'add_package']);
-
+// admin &&& user route 
+Route::get('/logout', [WebUserController::class, 'logoutapi'])->name('logout');
 
  });

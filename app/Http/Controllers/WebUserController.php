@@ -47,5 +47,12 @@ class WebUserController
     
 
 
+    public function logoutapi()
+    {
+        Auth::logout();
+        return response()->json(['success' => 'Logout successfully'], 200);
+        
+    }
+    
 
 }
