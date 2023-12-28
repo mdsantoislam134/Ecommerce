@@ -46,7 +46,7 @@ class ProductController extends Controller
   }
 
   
-    return response()->json(['data' => $product->subCategory]);
+    return response()->json(['data' => $product]);
 
    }
 
