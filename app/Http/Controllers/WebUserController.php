@@ -48,11 +48,18 @@ class WebUserController
 
 
     public function logoutapi()
-    {
-        Auth::logout();
-        return response()->json(['success' => 'Logout successfully'], 200);
-        
+{
+    $user = Auth::user();
+
+    if ($user) {
+        // Revoke the user's access token
+        $user->tokens()->delete();
     }
+
+    Auth::logout();
+
+    return response()->json(['success' => 'Logout successfully'], 200);
+}
     
 
 }

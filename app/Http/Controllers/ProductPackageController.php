@@ -22,19 +22,19 @@ class ProductPackageController extends Controller
             $package->delivery_option_id = $request->input('delivery_option_id');
             $package->package_price = $request->input('package_price');
       
-            // $package->save();
+            $package->save();
       
             $items = $request->input('products');
             foreach($items as $all){
                 $pack = new PackageProduct; // Fix: Change $pac to $pack
                 $pack->productPackage_id = $package->id;
                 $pack->product_id = $all;
-                // $pack->save();
+                $pack->save();
             }
         
-            $productPackage = Product::find(1);
+           
 
-         $data = $productPackage->productPackages;
+         $data = $package->packageProduct;
          
         return response()->json(['data' => $data]);
     }

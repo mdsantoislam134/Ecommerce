@@ -32,20 +32,21 @@ class ProductController extends Controller
   $product->save();
 
   // img store 
+  if ($request->hasFile('images')) {
+    $images = $request->file('images');
 
-  $images = $request->file('images');
-  foreach($images as $all){
-      $pack = new ProductImage; 
-      $pack->product_id = $product->id;
+    foreach ($images as $image) {
+        // Handle each image (e.g., store in storage, database, etc.)
+        $filename = $image->getClientOriginalName(); // Get the original filename
+        $image->move('productimage', $filename);
 
-      $photo = $all;
-      $imageName = time() . '.' . $photo->getClientOriginalExtension();
-      $photo->move('productimage', $imageName); // Fixed the move method to use $photo instead of $request->photo
-      $pack->product_image = $imageName;
-      $pack->save();
-  }
+        $pack = new ProductImage; 
+        $pack->product_id = $product->id; 
+        $pack->product_image = $filename;
+        $pack->save();
+    }
+}
 
-  
     return response()->json(['data' => $product]);
 
    }

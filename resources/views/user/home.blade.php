@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
     <div class="web-main">
@@ -1106,19 +1107,19 @@
           <div class="forminput-groupinput-midle">
             <img class="us2x-icon" alt="" src="./public/-background@2x.png" />
 
-            <div class="text23">All category</div>
-            <img
-              class="iconcontrolexpand-more4"
-              alt=""
-              src="./public/iconcontrolexpand-more@2x.png"
-            />
+            <div class="text23" class=""> <select name="" class="form-control" id="" style="width:100%;height:100%">
+            <option selected value=""> HAllo</option>
+            <option value=""> HAllo</option>
+            <option value=""> HAllo</option>
+            <option value=""> HAllo</option>
+           </select></div>
+            
           </div>
           <div class="forminput-groupinput-left">
             <img class="us2x-icon" alt="" src="./public/-background@2x.png" />
 
             <img class="icon01" alt="" />
-
-            <div class="text23">Search</div>
+            <div class="text23"> <input type="text"class="form-control" placeholder="Search" style="height:100%;width:100%"> </div>
           </div>
           <div class="buttonbtn-group">
             <img class="us2x-icon" alt="" src="./public/-background@2x.png" />
