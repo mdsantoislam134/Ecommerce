@@ -34,14 +34,14 @@ Route::post('/add-policy', [PolicyController::class, 'add_policy']);
 
 
 Route::post('/add-order', [OrderController::class, 'add_order']);
-Route::post('/add-img', [TestController::class, 'addimg']);
+// Route::post('/add-img', [TestController::class, 'addimg']);
 Route::post('/add-multy-img', [TestController::class, 'addmultiimg']);
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::post('/shop-details', [ShopDeteilsController::class, 'add_details']);
-Route::post('/add-product', [ProductController::class, 'add_product']);
+Route::post('/add-product', [TestController::class, 'addmultiimg']);
 Route::post('/add-package', [ProductPackageController::class, 'add_package']);
 
 // admin &&& user route 

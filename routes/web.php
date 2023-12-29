@@ -16,10 +16,9 @@ Route::get('/', function () {
 
 // Admin routes 
 
-Route::get('/Admin', [AdminController::class, 'loginview']);
-Route::post('/adminlogin', [AdminController::class, 'login'])->name('adminlogin');
-Route::get('/Adminhome', [AdminController::class, 'home'])->name('Adminhome');
+Route::middleware(['auth:sanctum'])->group(function () {
 
+    
 // CRUD Catagory
 
 Route::post('/add-catagory', [CatagoryController::class, 'add_cata']);
@@ -40,6 +39,13 @@ Route::get('/add-Policy', [PolicyController::class, 'allpolicy']);
 Route::get('/add-policy', [PolicyController::class, 'showForm']);
 Route::post('/add-policy', [PolicyController::class, 'add_policy']);
 
+    
+     });
+    
+Route::get('/Admin', [AdminController::class, 'loginview']);
+Route::post('/adminlogin', [AdminController::class, 'login'])->name('adminlogin');
+Route::get('/Adminhome', [AdminController::class, 'home'])->name('Adminhome');
+
 
 // Route::get('/Delete-Sub-Catagory/{id}', [AdminController::class, 'deletesubcata'])->name('deletesubcatagory');
 // Route::get('/Delete-Catagory/{id}', [CatagoryController::class, 'deletecata']);
@@ -52,8 +58,9 @@ Route::get('/logout', [WebUserController::class, 'logout'])->name('logout');
 
 
 // user routes 
-Route::get('User/login', [WebUserController::class, 'loginview'])->name('userlogin');
-Route::post('/login', [WebUserController::class, 'login'])->name('login');
+Route::get('User/login', [WebUserController::class, 'loginview'])->name('login');
+
+Route::post('/login', [WebUserController::class, 'login'])->name('userlogin');
 
 
 Route::get('/home', function () {

@@ -24,7 +24,7 @@ class CatagoryController extends Controller
             $imageName = time() . '.' . $photo->getClientOriginalExtension();
             $photo->move('catagoryimage', $imageName);
     
-            $cata->catagory_image = $imageName;
+            $cata->catagory_image = "catagoryimage/$imageName";
         }
     
         $cata->items_count = 0;
