@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\SubCatagory;
+use App\Models\Product;
 class CatagoryController extends Controller
 {
     
@@ -80,7 +81,15 @@ public function catalist(){
 
 }
 
+//  for api 
+
+
+public function getproduct($id)
+{
+    $pro = Product::where('sub_catagorie_id',$id)->get();
  
+    return response()->json(['data' => $pro]);
+}
 
 
 

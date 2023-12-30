@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-zen-kaku-gothic-antique: "Zen Kaku Gothic Antique";
+
+  /* font sizes */
+  --font-size-12xl-3: 31.3px;
+  --font-size-base: 16px;
+  --font-size-smi-8: 12.8px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-whitesmoke-100: #eee;
+  --color-dimgray: #616161;
+  --color-gray-100: #fafafa;
+  --color-gray-200: #757575;
+  --color-gray-300: #212121;
+  --color-darkslategray: #424242;
+
+  /* Border radiuses */
+  --br-29xl: 48px;
+}

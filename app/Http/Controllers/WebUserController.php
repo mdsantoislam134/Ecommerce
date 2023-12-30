@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class WebUserController
 {
      public function loginview(){
-        return view('user.login');
+        return view('user.loginuser');
      }
 
 

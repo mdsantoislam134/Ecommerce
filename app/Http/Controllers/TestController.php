@@ -65,7 +65,9 @@ class TestController extends Controller
 
                     $pack = new ProductImage; 
                     $pack->product_id = $product->id; 
-                    $pack->product_image = $imageName;
+                    $domain = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+                    $domain .= "://" . $_SERVER['HTTP_HOST']; 
+                    $pack->product_image = "$domain/productimage/$imageName";
                     $pack->save();
 
                     $uploadedImages[] = $imageName;

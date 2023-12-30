@@ -27,7 +27,7 @@ Route::post('/login', [AuthController::class, 'login']);
 // web php 
 Route::post('/add-sub-catagory/{id}', [CatagoryController::class, 'add_sub_cata']);
 Route::post('/add-catagory', [CatagoryController::class, 'add_cata']);
-Route::get('/catagory-list', [CatagoryController::class, 'catalist']);
+
 Route::post('/add-delivery-option', [DeliveryOptionController::class, 'add_delivery_option']);
 Route::post('/add-policy', [PolicyController::class, 'add_policy']);
 
@@ -43,6 +43,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('/shop-details', [ShopDeteilsController::class, 'add_details']);
 Route::post('/add-product', [TestController::class, 'addmultiimg']);
 Route::post('/add-package', [ProductPackageController::class, 'add_package']);
+// retive data 
+Route::get('/catagory-list', [CatagoryController::class, 'catalist']);
+// get product base sub Catagory 
+Route::get('/get-product/{id}', [CatagoryController::class, 'getproduct']);
 
 // admin &&& user route 
 Route::get('/logout', [WebUserController::class, 'logoutapi'])->name('logout');

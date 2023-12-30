@@ -10,16 +10,6 @@ Fileds = email,password
 
 
 
- Category api
-post  = http://127.0.0.1:8000/api/add-catagory
-Fileds = catagory,cata_image
-
-
- Sub Category api
-post  = http://127.0.0.1:8000/api/add-sub-catagory/{$id}=>catagoryid
-Fileds = subcata
-
-
 
 
  Shop Ditels api
@@ -49,5 +39,7 @@ Fileds = product-Id => products[],package_name,policy_id,delivery_option_id,pack
 Get = http://127.0.0.1:8000/api/catagory-list
 
 
+ Get Product List Sub catagory base api
+Get = http://127.0.0.1:8000/api/get-product/{id}
 
 
