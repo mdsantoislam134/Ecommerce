@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Validator;
 class WebUserController
 {
      public function loginview(){
+ 
+        if (auth()->check()) {
+            return redirect()->route('home');
+        }
+
         return view('user.loginuser');
      }
 

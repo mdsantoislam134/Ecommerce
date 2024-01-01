@@ -58,11 +58,11 @@ Route::get('/logout', [WebUserController::class, 'logout'])->name('logout');
 
 
 // user routes 
-Route::get('User/login', [WebUserController::class, 'loginview'])->name('login');
+Route::get('User/login', [WebUserController::class, 'loginview'])->name('userlogin');
 
-Route::post('/login', [WebUserController::class, 'login'])->name('userlogin');
+Route::post('/login', [WebUserController::class, 'login'])->name('login');
 
 
 Route::get('/home', function () {
-    return view('user.home');
+    return view('user.useregister');
 });

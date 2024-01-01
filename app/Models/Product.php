@@ -17,6 +17,7 @@ class Product extends Model
         'product_img',
         'product_price',
         'product_quantity',
+        'order_count'
     ];
 
     public function user()

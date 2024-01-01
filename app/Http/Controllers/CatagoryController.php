@@ -24,8 +24,8 @@ class CatagoryController extends Controller
             $photo = $request->file('cata_image');
             $imageName = time() . '.' . $photo->getClientOriginalExtension();
             $photo->move('catagoryimage', $imageName);
-    
-            $cata->catagory_image = "catagoryimage/$imageName";
+          
+            $cata->catagory_image = "/catagoryimage/$imageName";
         }
     
         $cata->items_count = 0;
@@ -83,13 +83,22 @@ public function catalist(){
 
 //  for api 
 
-
 public function getproduct($id)
 {
-    $pro = Product::where('sub_catagorie_id',$id)->get();
- 
+    $pro = Product::where('sub_catagorie_id', $id)->with('productimg')->get();
+
+    // Prepend domain to image paths
+    $pro = $pro->map(function ($product) {
+        $product->productimg = $product->productimg->map(function ($image) {
+            $image->product_image = url('/' . $image->product_image); // Adjust 'domain' accordingly
+            return $image;
+        });
+        return $product;
+    });
+
     return response()->json(['data' => $pro]);
 }
+
 
 
 

@@ -1,0 +1,683 @@
+.sign-up {
+  position: absolute;
+  top: 72px;
+  left: 154px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--color-darkslateblue);
+  text-align: center;
+}
+
+.back-icon,
+.signup-child {
+  position: absolute;
+  left: 24px;
+}
+.back-icon {
+  top: 60px;
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+}
+.signup-child {
+  top: 613px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-royalblue);
+  width: 327px;
+  height: 52px;
+}
+.iconlylightarrow-right-3 {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 133px;
+  width: 20px;
+  height: 22px;
+  object-fit: cover;
+  display: none;
+}
+.sign-up1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 16px;
+  font-weight: 500;
+}
+.iconlylightarrow-right-3-parent {
+  position: absolute;
+  top: 631px;
+  left: 157px;
+  width: 62px;
+  height: 16px;
+  text-align: center;
+  color: var(--color-white);
+}
+.signup-item {
+  position: absolute;
+  top: 193px;
+  left: 77px;
+  border-radius: 50%;
+  background-color: #feb5bd;
+  width: 6px;
+  height: 6px;
+  display: none;
+}
+.create-an-account {
+  position: absolute;
+  top: 192px;
+  left: 24px;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 600;
+  color: var(--color-darkslateblue);
+}
+.create-an-account1 {
+  position: absolute;
+  top: 229px;
+  left: 24px;
+  font-size: var(--font-size-sm);
+  line-height: 24px;
+  color: var(--color-lightslategray-100);
+  display: inline-block;
+  width: 249px;
+}
+.signup-inner {
+  position: absolute;
+  top: 278px;
+  left: 24px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-royalblue);
+  box-sizing: border-box;
+  width: 327px;
+  height: 52px;
+}
+.store-name {
+  position: absolute;
+  top: 296px;
+  left: 44px;
+  line-height: 16px;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: var(--color-darkslateblue);
+}
+.rectangle-div,
+.signup-child1 {
+  position: absolute;
+  top: 345px;
+  left: 24px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gainsboro);
+  box-sizing: border-box;
+  width: 327px;
+  height: 52px;
+}
+.signup-child1 {
+  top: 479px;
+}
+.your-name,
+.your-phone-number {
+  position: absolute;
+  top: 363px;
+  left: 44px;
+  line-height: 16px;
+}
+.your-phone-number {
+  top: 497px;
+}
+.signup-child2,
+.signup-child3 {
+  position: absolute;
+  top: 412px;
+  left: 24px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gainsboro);
+  box-sizing: border-box;
+  width: 327px;
+  height: 52px;
+}
+.signup-child3 {
+  top: 546px;
+}
+.create-password,
+.your-email-address {
+  position: absolute;
+  top: 430px;
+  left: 44px;
+  line-height: 16px;
+}
+.create-password {
+  top: 564px;
+}
+.span {
+  color: var(--color-royalblue);
+}
+.sign-in1 {
+  font-weight: 600;
+}
+.have-an-account-container {
+  position: absolute;
+  top: 768.31px;
+  left: 98px;
+  font-size: var(--font-size-sm);
+  line-height: 14px;
+  text-align: right;
+}
+.continue-with {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  line-height: 14px;
+  font-weight: 500;
+}
+.apple-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-7xs);
+  background-color: var(--color-white);
+  border: 1px solid #e9f1ff;
+  box-sizing: border-box;
+  width: 44.8px;
+  height: 43.31px;
+}
+.path4-icon {
+  position: absolute;
+  height: 44.83%;
+  width: 35%;
+  top: 27.59%;
+  right: 31.67%;
+  bottom: 27.59%;
+  left: 33.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.apple,
+.google-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44.8px;
+  height: 43.31px;
+}
+.google-icon {
+  left: 62.8px;
+  object-fit: cover;
+}
+.continue-with-parent,
+.social {
+  position: absolute;
+  top: 0;
+  left: 111px;
+  width: 107.6px;
+  height: 43.31px;
+}
+.continue-with-parent {
+  top: 695px;
+  left: 78px;
+  width: 218.6px;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-lightslategray-100);
+}
+.action,
+.time {
+  position: absolute;
+}
+.time {
+  top: calc(50% - 9px);
+  left: 0;
+  letter-spacing: -0.17px;
+  line-height: 18px;
+  font-weight: 500;
+}
+.action {
+  top: calc(50% - 8px);
+  left: 25.89px;
+  width: 29px;
+  height: 18px;
+}
+.battery-icon {
+  position: absolute;
+  top: calc(50% - 5.75px);
+  right: 0;
+  width: 24.5px;
+  height: 11.5px;
+  object-fit: cover;
+}
+.combined-shape-icon,
+.wi-fi-icon {
+  position: relative;
+  width: 17.1px;
+  height: 10.7px;
+  object-fit: cover;
+}
+.wi-fi-icon {
+  width: 15.4px;
+  height: 11.06px;
+}
+.container {
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 24px;
+  width: 67px;
+  height: 11.5px;
+}
+.iphone-xs-bars-status-de {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 44px;
+  text-align: center;
+  font-size: 15px;
+  color: #000;
+}
+.signup-child4,
+.signup-child5 {
+  position: absolute;
+  top: 124px;
+  border-radius: var(--br-7xs);
+  width: 153px;
+  height: 38px;
+}
+.signup-child4 {
+  left: calc(50% - 162.5px);
+  background-color: var(--color-darkslateblue);
+}
+.signup-child5 {
+  left: calc(50% + 10.5px);
+  border: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+}
+.seller-1-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.seller {
+  position: relative;
+  line-height: 16px;
+  font-weight: 500;
+}
+.buyer-1-parent,
+.seller-1-parent {
+  position: absolute;
+  top: 133px;
+  left: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-xs);
+  color: var(--color-white);
+}
+.buyer-1-parent {
+  left: 242px;
+  text-align: center;
+  color: var(--color-darkslateblue);
+}
+.signup {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 812px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-lightslategray-200);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 600px) {
+  
+  .sign-up {
+    position: absolute;
+    top: 72px;
+    left: 154px;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 500;
+    color: var(--color-darkslateblue);
+    text-align: center;
+  }
+  .back-icon,
+  .signup-child {
+    position: absolute;
+    left: 24px;
+  }
+  .back-icon {
+    top: 60px;
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+  }
+  .signup-child {
+    top: 613px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-royalblue);
+    width: 327px;
+    height: 52px;
+  }
+  .iconlylightarrow-right-3 {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 133px;
+    width: 20px;
+    height: 22px;
+    object-fit: cover;
+    display: none;
+  }
+  .sign-up1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 16px;
+    font-weight: 500;
+  }
+  .iconlylightarrow-right-3-parent {
+    position: absolute;
+    top: 631px;
+    left: 157px;
+    width: 62px;
+    height: 16px;
+    text-align: center;
+    color: var(--color-white);
+  }
+  .signup-item {
+    position: absolute;
+    top: 193px;
+    left: 77px;
+    border-radius: 50%;
+    background-color: #feb5bd;
+    width: 6px;
+    height: 6px;
+    display: none;
+  }
+  .create-an-account {
+    position: absolute;
+    top: 192px;
+    left: 24px;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 600;
+    color: var(--color-darkslateblue);
+  }
+  .create-an-account1 {
+    position: absolute;
+    top: 229px;
+    left: 24px;
+    font-size: var(--font-size-sm);
+    line-height: 24px;
+    color: var(--color-lightslategray-100);
+    display: inline-block;
+    width: 249px;
+  }
+  .signup-inner {
+    position: absolute;
+    top: 278px;
+    left: 24px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-royalblue);
+    box-sizing: border-box;
+    width: 327px;
+    height: 52px;
+  }
+  .store-name {
+    position: absolute;
+    top: 296px;
+    left: 44px;
+    line-height: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: var(--color-darkslateblue);
+  }
+  .rectangle-div,
+  .signup-child1 {
+    position: absolute;
+    top: 345px;
+    left: 24px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gainsboro);
+    box-sizing: border-box;
+    width: 327px;
+    height: 52px;
+  }
+  .signup-child1 {
+    top: 479px;
+  }
+  .your-name,
+  .your-phone-number {
+    position: absolute;
+    top: 363px;
+    left: 44px;
+    line-height: 16px;
+  }
+  .your-phone-number {
+    top: 497px;
+  }
+  .signup-child2,
+  .signup-child3 {
+    position: absolute;
+    top: 412px;
+    left: 24px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gainsboro);
+    box-sizing: border-box;
+    width: 327px;
+    height: 52px;
+  }
+  .signup-child3 {
+    top: 546px;
+  }
+  .create-password,
+  .your-email-address {
+    position: absolute;
+    top: 430px;
+    left: 44px;
+    line-height: 16px;
+  }
+  .create-password {
+    top: 564px;
+  }
+  .span {
+    color: var(--color-royalblue);
+  }
+  .sign-in1 {
+    font-weight: 600;
+  }
+  .have-an-account-container {
+    position: absolute;
+    top: 768.31px;
+    left: 98px;
+    font-size: var(--font-size-sm);
+    line-height: 14px;
+    text-align: right;
+  }
+  .continue-with {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    line-height: 14px;
+    font-weight: 500;
+  }
+  .apple-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-7xs);
+    background-color: var(--color-white);
+    border: 1px solid #e9f1ff;
+    box-sizing: border-box;
+    width: 44.8px;
+    height: 43.31px;
+  }
+  .path4-icon {
+    position: absolute;
+    height: 44.83%;
+    width: 35%;
+    top: 27.59%;
+    right: 31.67%;
+    bottom: 27.59%;
+    left: 33.33%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .apple,
+  .google-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44.8px;
+    height: 43.31px;
+  }
+  .google-icon {
+    left: 62.8px;
+    object-fit: cover;
+  }
+  .continue-with-parent,
+  .social {
+    position: absolute;
+    top: 0;
+    left: 111px;
+    width: 107.6px;
+    height: 43.31px;
+  }
+  .continue-with-parent {
+    top: 695px;
+    left: 78px;
+    width: 218.6px;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-lightslategray-100);
+  }
+  .action,
+  .time {
+    position: absolute;
+  }
+  .time {
+    top: calc(50% - 9px);
+    left: 0;
+    letter-spacing: -0.17px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+  .action {
+    top: calc(50% - 8px);
+    left: 25.89px;
+    width: 29px;
+    height: 18px;
+  }
+  .battery-icon {
+    position: absolute;
+    top: calc(50% - 5.75px);
+    right: 0;
+    width: 24.5px;
+    height: 11.5px;
+    object-fit: cover;
+  }
+  .combined-shape-icon,
+  .wi-fi-icon {
+    position: relative;
+    width: 17.1px;
+    height: 10.7px;
+    object-fit: cover;
+  }
+  .wi-fi-icon {
+    width: 15.4px;
+    height: 11.06px;
+  }
+  .container {
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 24px;
+    width: 67px;
+    height: 11.5px;
+  }
+  .iphone-xs-bars-status-de {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 44px;
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+  }
+  .signup-child4,
+  .signup-child5 {
+    position: absolute;
+    top: 124px;
+    border-radius: var(--br-7xs);
+    width: 153px;
+    height: 38px;
+  }
+  .signup-child4 {
+    left: calc(50% - 162.5px);
+    background-color: var(--color-darkslateblue);
+  }
+  .signup-child5 {
+    left: calc(50% + 10.5px);
+    border: 1px solid var(--color-darkslateblue);
+    box-sizing: border-box;
+  }
+  .seller-1-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .seller {
+    position: relative;
+    line-height: 16px;
+    font-weight: 500;
+  }
+  .buyer-1-parent,
+  .seller-1-parent {
+    position: absolute;
+    top: 133px;
+    left: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+    font-size: var(--font-size-xs);
+    color: var(--color-white);
+  }
+  .buyer-1-parent {
+    left: 242px;
+    text-align: center;
+    color: var(--color-darkslateblue);
+  }
+  .signup {
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 812px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--color-lightslategray-200);
+    font-family: var(--font-poppins);
+  }
+
+}

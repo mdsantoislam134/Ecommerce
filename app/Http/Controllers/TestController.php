@@ -46,6 +46,7 @@ class TestController extends Controller
           $product->prduct_details = $request->prduct_details;
           $product->prduct_price = $request->prduct_price;
           $product->prduct_quantity = $request->prduct_quantity;
+          $product->order_count = "1";
       
         $product->save();
 
@@ -65,15 +66,14 @@ class TestController extends Controller
 
                     $pack = new ProductImage; 
                     $pack->product_id = $product->id; 
-                    $domain = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
-                    $domain .= "://" . $_SERVER['HTTP_HOST']; 
-                    $pack->product_image = "$domain/productimage/$imageName";
+             
+                    $pack->product_image = "/productimage/$imageName";
                     $pack->save();
 
                     $uploadedImages[] = $imageName;
                 }
 
-                return response()->json(['message' => 'Images uploaded successfully', 'images' => $uploadedImages], 200);
+                return response()->json(['message' => 'Images uploaded successfully', 'images' => $product], 200);
             } else {
                 return response()->json(['message' => 'Invalid images provided'], 400);
             }

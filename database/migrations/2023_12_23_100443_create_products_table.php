@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('prduct_details');
             $table->string('prduct_price');
             $table->string('prduct_quantity');
+            $table->string('order_count');
             $table->timestamps();
         });
     }
