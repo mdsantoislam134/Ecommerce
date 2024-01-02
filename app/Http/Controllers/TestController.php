@@ -29,17 +29,17 @@ class TestController extends Controller
     public function addmultiimg(Request $request)
     {
         $request->validate([
-            'user_id' => 'required|numeric',
-            'catagori_id' => 'required|numeric',
-            'sub_catagorie_id' => 'required|numeric',
-            'prduct_name' => 'required|string|max:255',
-            'prduct_details' => 'required|string',
-            'prduct_price' => 'required|numeric',
-            'prduct_quantity' => 'required|numeric',
+         
+            'catagori_id' => 'required',
+            'sub_catagorie_id' => 'required',
+            'prduct_name' => 'required',
+            'prduct_details' => 'required',
+            'prduct_price' => 'required',
+            'prduct_quantity' => 'required',
           ]);
       
           $product = new Product();
-          $product->user_id = $request->user_id;
+          $product->user_id = $request->user()->id;
           $product->catagori_id = $request->catagori_id;
           $product->sub_catagorie_id = $request->sub_catagorie_id;
           $product->prduct_name = $request->prduct_name;

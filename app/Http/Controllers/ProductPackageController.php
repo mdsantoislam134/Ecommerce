@@ -25,18 +25,23 @@ class ProductPackageController extends Controller
             $package->save();
       
             $items = $request->input('products');
-            foreach($items as $all){
-                $pack = new PackageProduct; // Fix: Change $pac to $pack
-                $pack->productPackage_id = $package->id;
-                $pack->product_id = $all;
-                $pack->save();
-            }
-        
-           
 
-         $data = $package->packageProduct;
+            if (is_array($items)) {
+                // If $items is already an array, use it directly
+                foreach ($items as $all) {
+                    
+                    $pack = new PackageProduct;
+                    $pack->productPackage_id = $package->id;
+                    $pack->product_id = $all['id'];
+                    $pack->order_count = $all['order_count'];
+        
+                    $pack->save();
+                    
+                }
+            } 
+    
          
-        return response()->json(['data' => $data]);
+        return response()->json(['data' => $package]);
     }
     
 }

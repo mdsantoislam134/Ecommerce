@@ -48,7 +48,8 @@ Route::get('/catagory-list', [CatagoryController::class, 'catalist']);
 // get product base sub Catagory 
 Route::get('/get-product/{id}', [CatagoryController::class, 'getproduct']);
 
-// admin &&& user route 
+// update
+Route::post('/profile-update', [AuthController::class, 'profileupdate']);
 Route::get('/logout', [WebUserController::class, 'logoutapi'])->name('logout');
 
  });

@@ -10,7 +10,7 @@ use App\Http\Controllers\PolicyController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.home');
 })->name('home');
 
 
