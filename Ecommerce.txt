@@ -52,3 +52,8 @@ Get = http://127.0.0.1:8000/api/product-update/2
 
 
 http://127.0.0.1:8000/api/get-all-package
+
+
+package update 
+
+post : http://127.0.0.1:8000/api/package-update/1
