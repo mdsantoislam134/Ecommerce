@@ -941,12 +941,22 @@
         </div>
         <div class="buttonbtn-basic4">
           <div class="buttonbasetext-sm">
-            <div class="text1">Join now</div>
+          <a href="{{route('userregister')}}" style="    width: 11.3rem;
+    height: 82%;
+    padding: 9px;
+    backgroun:blue;
+    color:white;
+    padding-top: 10px;
+    font-size: 15px;" class="btn">Join Now</a>
           </div>
         </div>
         <div class="buttonbtn-basic5">
           <div class="buttonbasetext-sm">
-            <div class="text1">Log in</div>
+            <a href="{{route('userlogin')}}" style="    width: 11.3rem;
+    height: 82%;
+    padding: 9px;
+    padding-top: 10px;
+    font-size: 15px;" class="btn">Log in</a>
           </div>
         </div>
         <img class="avatar-icon" alt="" src="./public/avatar@2x.png" />

@@ -330,7 +330,8 @@
 .signup {
   position: relative;
   background-color: var(--color-white);
-  width: 100%;
+  width: 26%;
+  margin: 0 auto;
   height: 812px;
   overflow: hidden;
   text-align: left;
@@ -338,8 +339,30 @@
   color: var(--color-lightslategray-200);
   font-family: var(--font-poppins);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
   
+  body{
+    margin:-46px 0;
+  }
   .sign-up {
     position: absolute;
     top: 72px;

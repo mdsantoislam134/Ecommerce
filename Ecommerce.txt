@@ -36,10 +36,18 @@ Fileds = product-Id => products[],package_name,policy_id,delivery_option_id,pack
 
 
  Get Category List api
-Get = http://127.0.0.1:8000/api/catagory-list
+Get = http://127.0.0.1:8000/api/catagory-list     
 
 
  Get Product List Sub catagory base api
 Get = http://127.0.0.1:8000/api/get-product/{id}
+
+
+Get Product User base api
+Get = http://127.0.0.1:8000/api/get-product
+
+
+ Get Update Product api
+Get = http://127.0.0.1:8000/api/product-update/2
 
 

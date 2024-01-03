@@ -14,11 +14,11 @@
   <body>
     <div class="signup">
       <div class="sign-up">Sign Up</div>
-      <img class="back-icon" alt="" src="./public/back@2x.png" />
+    
 
       <div class="signup-child"></div>
       <div class="iconlylightarrow-right-3-parent">
-        <img class="iconlylightarrow-right-3" alt="" />
+     
 
         <div class="sign-up1">Sign Up</div>
       </div>

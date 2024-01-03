@@ -29,7 +29,7 @@ class Product extends Model
     {
         return $this->belongsTo(Catagory::class,'catagori_id');
     }
-    public function productimg()
+    public function productimage()
     {
         return $this->hasMany(ProductImage::class,'product_id');
     }

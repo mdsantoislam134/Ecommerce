@@ -47,9 +47,20 @@ Route::post('/add-package', [ProductPackageController::class, 'add_package']);
 Route::get('/catagory-list', [CatagoryController::class, 'catalist']);
 // get product base sub Catagory 
 Route::get('/get-product/{id}', [CatagoryController::class, 'getproduct']);
+Route::get('/get-product', [TestController::class, 'getproduct']);
 
 // update
 Route::post('/profile-update', [AuthController::class, 'profileupdate']);
+Route::post('/package-update/{id}', [ProductPackageController::class, 'update_package']);
+Route::post('/get-package', [ProductPackageController::class, 'get_package']);
+
+Route::post('/product-update/{id}', [TestController::class, 'productupdate']);
+
+
+
+
+
+
 Route::get('/logout', [WebUserController::class, 'logoutapi'])->name('logout');
 
  });

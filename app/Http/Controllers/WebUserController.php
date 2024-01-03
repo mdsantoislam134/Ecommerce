@@ -38,7 +38,11 @@ class WebUserController
      }
      
     
-   
+//    register section 
+
+public function registerview(){
+    return view('user.useregister');
+}
         
 
      
