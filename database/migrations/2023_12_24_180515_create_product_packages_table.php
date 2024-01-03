@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('product_packages', function (Blueprint $table) {
             $table->id();
             $table->string('package_name');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('policy_id')->constrained('policies');
             $table->foreignId('delivery_option_id')->constrained('delivery_options');
             $table->string('package_price');

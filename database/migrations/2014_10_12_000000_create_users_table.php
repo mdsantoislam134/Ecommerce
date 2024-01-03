@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('password');
             $table->string('balance');
             $table->string('user_type');
+            $table->string('profile_image')->nullable();
+            $table->string('address')->nullable();
+            $table->string('last_name')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

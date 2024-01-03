@@ -163,10 +163,19 @@ class TestController extends Controller
 
 public function getproduct(Request $request)
 {
-      $product = Product::where('user_id',$request->user()->id)->with('productimage')->get();
-      return response()->json(['message' => 'Product get successfully', 'product' => $product], 200);
+    $domain = url('/'); 
+    // $user= $request->user()->id;where('user_id', $user)->
+    $pro = Product::with('productimage')->with('catagory')->with('subCategory')->get();
+
+    $pro->each(function ($product) use ($domain) {
+        $product->productimage->each(function ($image) use ($domain) {
+            $image->product_image = $domain . $image->product_image;
+        });
+    });
+
+    return response()->json(['data' => $pro]);
 }
-    
+
     
 
 }

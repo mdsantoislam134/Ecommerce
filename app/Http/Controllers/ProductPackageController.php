@@ -18,6 +18,7 @@ class ProductPackageController extends Controller
         ]);
 
         $package = New ProductPackage;
+            $package->user_id = $request->user()->id;
             $package->package_name = $request->input('package_name');
             $package->policy_id = $request->input('policy_id');
             $package->delivery_option_id = $request->input('delivery_option_id');
@@ -102,9 +103,39 @@ public function update_package(Request $request, $id){
     return response()->json(['data' => $package]);
 }
 
-public function get_package()
+public function get_package(Request $request)
 {
-     $package = ProductPackage::where('user_id',);
+      $userid =$request->user()->id;
+      $package = ProductPackage::where('user_id', $userid)->with('products')->get();
+    //   productimage 
+      return response()->json(['data' => $package]);
 }
+
+public function get_all_package(Request $request)
+{
+    $packages = ProductPackage::with(['products.productimage'])->get();
+
+    $packages->each(function ($package) {
+        $package->products->each(function ($product) {
+            if ($product->productimage) {
+                // Use unique to ensure each image is processed only once
+                $uniqueImages = $product->productimage->unique('id');
+
+                $uniqueImages->each(function ($image) {
+                    $image->product_image = asset($image->product_image);
+                });
+            }
+        });
+    });
+
+    return response()->json(['data' => $packages]);
+}
+
+
+
+
+
+
+
 
 }

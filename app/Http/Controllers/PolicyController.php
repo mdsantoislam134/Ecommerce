@@ -25,7 +25,7 @@ class PolicyController extends Controller
         $policy->save();
 
     
-        return response()->json(['data' => $policy]);
+        return redirect('add-Policy');
 
     }
 }

@@ -55,20 +55,24 @@ public function registerview(){
     }
     
 
-
     public function logoutapi()
-{
-    $user = Auth::user();
-
-    if ($user) {
-        // Revoke the user's access token
-        $user->tokens()->delete();
+    {
+        // Get the authenticated user
+        $user = Auth::user();
+    
+        // Check if a user is authenticated
+        if ($user) {
+            // Revoke all access tokens for the user
+            $user->tokens()->delete();
+        }
+    
+        // Log the user out
+        Auth::guard('web')->logout();
+    
+        // Return a JSON response indicating successful logout
+        return response()->json(['success' => 'Logout successfully'], 200);
     }
-
-    Auth::logout();
-
-    return response()->json(['success' => 'Logout successfully'], 200);
-}
+    
     
 
 }

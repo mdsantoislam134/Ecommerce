@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\SubCatagory;
 use App\Models\Product;
+use App\Models\ProductImage;
 class CatagoryController extends Controller
 {
     
@@ -72,28 +73,37 @@ class CatagoryController extends Controller
 
 //   Retrive cata List 
 
+public function catalist()
+{
+    $domain = url('/'); // Get the base URL of the application
 
-public function catalist(){
-
-    $cata = Catagory::with('subcatagory')->get();;
+    // Fetch categories with their associated subcategories
+    $cata = Catagory::with('subcatagory')->get();
     
-    return response()->json(['data' => $cata]);
+    // Check if catagory_image exists before updating the image URL
+    $cata = $cata->map(function ($category) use ($domain) {
+        if ($category->catagory_image) {
+            $category->catagory_image = $domain . $category->catagory_image; // Update the image URL with the base URL
+        }
+        return $category;
+    });
 
+    // Return the response with the updated category data
+    return response()->json(['data' => $cata]);
 }
 
-//  for api 
 
+//  for api 
 public function getproduct($id)
 {
-    $pro = Product::where('sub_catagorie_id', $id)->with('productimg')->get();
+    $pro = Product::where('sub_catagorie_id', $id)->with('productimage')->get();
 
-    // Prepend domain to image paths
-    $pro = $pro->map(function ($product) {
-        $product->productimg = $product->productimg->map(function ($image) {
-            $image->product_image = url('/' . $image->product_image); // Adjust 'domain' accordingly
-            return $image;
+    // Check if productimg relationship exists before mapping
+    $domain = url('/');
+    $pro->each(function ($product) use ($domain) {
+        $product->productimage->each(function ($image) use ($domain) {
+            $image->product_image = $domain . $image->product_image;
         });
-        return $product;
     });
 
     return response()->json(['data' => $pro]);

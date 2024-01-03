@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('productPackage_id')->constrained('product_packages');
             $table->foreignId('product_id')->constrained('products');
+            $table->string('order_count');
             $table->timestamps();
         });
     }
