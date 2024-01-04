@@ -13,7 +13,6 @@ class OrderController extends Controller
     {
         $request->validate([
             'productPackage_id' => 'required|exists:product_packages,id',
-            'buyer_id' => 'required|exists:users,id',
             'buyer_address' => 'required|string',
             // Add any other validation rules for your order fields
         ]);
@@ -22,7 +21,7 @@ class OrderController extends Controller
         $order = new Order([
             'order_id' => Str::random(8),
             'productPackage_id' => $request->input('productPackage_id'),
-            'buyer_id' => $request->input('buyer_id'),
+            'buyer_id' => $request->user()->id,
             'order_status' => "pending",
             'buyer_address' => $request->input('buyer_address'),
         ]);

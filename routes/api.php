@@ -34,7 +34,7 @@ Route::post('/add-policy', [PolicyController::class, 'add_policy']);
 
 
 
-Route::post('/add-order', [OrderController::class, 'add_order']);
+
 // Route::post('/add-img', [TestController::class, 'addimg']);
 Route::post('/add-multy-img', [TestController::class, 'addmultiimg']);
 
@@ -59,7 +59,7 @@ Route::post('/package-update/{id}', [ProductPackageController::class, 'update_pa
 Route::post('/product-update/{id}', [TestController::class, 'productupdate']);
 
 
-
+Route::post('/add-order', [OrderController::class, 'add_order']);
 
 
 

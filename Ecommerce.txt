@@ -57,3 +57,8 @@ http://127.0.0.1:8000/api/get-all-package
 package update 
 
 post : http://127.0.0.1:8000/api/package-update/1
+
+
+post = https://ecommerce.sheikhit.net/api/add-order
+
+required = productPackage_id,buyer_address

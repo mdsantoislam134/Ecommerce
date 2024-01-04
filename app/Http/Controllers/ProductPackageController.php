@@ -91,7 +91,7 @@ public function update_package(Request $request, $id){
                 
                 $pack = new PackageProduct;
                 $pack->productPackage_id = $package->id;
-                $pack->product_id = $all['product_id'];
+                $pack->product_id = $all['id'];
                 $pack->order_count = $all['order_count'];
     
                 $pack->save();
