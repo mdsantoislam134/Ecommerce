@@ -62,3 +62,20 @@ post : http://127.0.0.1:8000/api/package-update/1
 post = https://ecommerce.sheikhit.net/api/add-order
 
 required = productPackage_id,buyer_address
+
+
+show buyer pending order 
+get = https://ecommerce.sheikhit.net/api/get-buyer-pending-orders
+
+show seller pending order 
+get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
+
+show one seller all pending order 
+get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
+
+show seller pending order 
+get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
+
+send package review 
+post = https://ecommerce.sheikhit.net/api//send-review-reatting/{id}
+

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductPackage extends Model
 {
     use HasFactory;
+    
     public function user()
     {
         return $this->belongsTo(User::class,'user_id');
@@ -33,9 +34,20 @@ class ProductPackage extends Model
     return $this->belongsToMany(Product::class, 'package_products','productPackage_id','product_id');
 }
 
-public function orders()
-{
-    return $this->hasMany(Order::class, 'productPackage_id');
-}
+  public function orders()
+   {
+    return $this->belongsToMany(Order::class, 'order_product_package')
+        ->withPivot('total_price', 'package_quantity')
+        ->withTimestamps();
+   }
+    
 
+public function orderpackage()
+{
+    return $this->hasMany(OrderPackage::class, 'order_id');
+}
+public function review()
+{
+    return $this->hasMany(Review::class, 'productPackage_id');
+}
 }

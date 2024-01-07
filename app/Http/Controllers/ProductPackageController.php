@@ -6,23 +6,27 @@ use Illuminate\Http\Request;
 use App\Models\ProductPackage;
 Use App\Models\PackageProduct;
 Use App\Models\Product;
+Use App\Models\Order;
 class ProductPackageController extends Controller
 {
 
     public function add_package(Request $request){
-        $request->validate([
-            'package_name' => 'required|string',
-            'policy_id' => 'required',
-            'delivery_option_id' => 'required',
-            'package_price' => 'required|numeric',
-        ]);
+        // $request->validate([
+        //     'package_name' => 'required|string',
+        //     'policy_id' => 'required',
+        //     'delivery_option_id' => 'required',
+        //     'package_price' => 'required|numeric',
+        // ]);
 
         $package = New ProductPackage;
             $package->user_id = $request->user()->id;
-            $package->package_name = $request->input('package_name');
-            $package->policy_id = $request->input('policy_id');
-            $package->delivery_option_id = $request->input('delivery_option_id');
-            $package->package_price = $request->input('package_price');
+            $package->package_name ="Winter Package";
+            $package->package_discription = "Buye the package and Enjoy the Winter";
+            $package->policy_id = 1;
+            $package->delivery_option_id = 1;
+            $package->package_price ="1000";
+            $package->package_discount_price = "800";
+            $package->rating = "0";
       
             $package->save();
       
@@ -36,7 +40,6 @@ class ProductPackageController extends Controller
                     $pack->productPackage_id = $package->id;
                     $pack->product_id = $all['id'];
                     $pack->order_count = $all['order_count'];
-        
                     $pack->save();
                     
                 }
@@ -74,6 +77,15 @@ public function update_package(Request $request, $id){
     {
         $package->package_price = $request->input('package_price');
     }
+    if( $request->input('package_discount_price'))
+    {
+        $package->package_discount_price = $request->input('package_discount_price');
+    }
+    if( $request->input('package_discription'))
+    {
+        $package->package_discription = $request->input('package_discription');
+    }
+
 
     $package->save();
 
@@ -134,7 +146,121 @@ public function get_all_package(Request $request)
 
 
 
+public function get_pending_order_package(Request $request)
+{
+    $orders = Order::where('buyer_id', $request->user()->id)
+       ->where('order_status',"pending")
+        ->with([
+            'productPackages.products.productimage',
+        ])
+        ->get();
 
+    
+    return response()->json(['data' => $orders]);
+}
+
+
+public function get_pending_order_seller(Request $request){
+
+        $orders = Order::where('seller_id',$request->user()->id )
+           ->where('order_status',"pending")
+            ->with([
+                'productPackages.products.productimage',
+            ])
+            ->get();
+    
+        
+        return response()->json(['data' => $orders]);
+
+   
+}
+
+
+public function dealofday(){
+    // Retrieve ProductPackage records with related products and product images
+    $packages = ProductPackage::with([
+        'products.productimage',
+        'user' => function ($query) {
+            $query->select('id', 'store_name'); // Select only the necessary columns
+        }
+    ])->where('catagory', "Deal of the Day")->get();
+
+   
+    $packages->each(function ($package) {
+        $package->products->each(function ($product) {
+            if ($product->productimage) {
+                // Use unique to ensure each image is processed only once
+                $uniqueImages = $product->productimage->unique('id');
+
+                $uniqueImages->each(function ($image) {
+                    $image->product_image = asset($image->product_image);
+                });
+            }
+        });
+    });
+    // Return the data as JSON response
+    return response()->json(['data' => $packages]);
+}
+
+
+public function specialoffer(){
+
+      // Retrieve ProductPackage records with related products and product images
+      $packages = ProductPackage::with([
+        'products.productimage',
+        'user' => function ($query) {
+            $query->select('id', 'store_name'); // Select only the necessary columns
+        }
+    ])->where('catagory', "Special Offer")->get();
+    
+
+
+    
+      $packages->each(function ($package) {
+          $package->products->each(function ($product) {
+              if ($product->productimage) {
+                  // Use unique to ensure each image is processed only once
+                  $uniqueImages = $product->productimage->unique('id');
+  
+                  $uniqueImages->each(function ($image) {
+                      $image->product_image = asset($image->product_image);
+                  });
+              }
+          });
+      });
+      // Return the data as JSON response
+      return response()->json(['data' => $packages]);
+}
+
+
+
+public function singelsellerpackage($id)
+{
+    $packages = ProductPackage::with([
+        'products.productimage',
+        'user' => function ($query) {
+            $query->select('id', 'store_name'); // Select only the necessary columns
+        }
+    ])->where('user_id', $id)->get();
+    
+
+
+    
+      $packages->each(function ($package) {
+          $package->products->each(function ($product) {
+              if ($product->productimage) {
+                  // Use unique to ensure each image is processed only once
+                  $uniqueImages = $product->productimage->unique('id');
+  
+                  $uniqueImages->each(function ($image) {
+                      $image->product_image = asset($image->product_image);
+                  });
+              }
+          });
+      });
+      // Return the data as JSON response
+      return response()->json(['data' => $packages]);
+}
 
 
 

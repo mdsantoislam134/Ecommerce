@@ -12,6 +12,7 @@ use App\Http\Controllers\DeliveryOptionController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\WebUserController;
+use App\Http\Controllers\ReviewController;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -50,8 +51,27 @@ Route::get('/catagory-list', [CatagoryController::class, 'catalist']);
 Route::get('/get-product/{id}', [CatagoryController::class, 'getproduct']);
 Route::get('/get-product', [TestController::class, 'getproduct']);
 Route::get('/get-package', [ProductPackageController::class, 'get_package']);
+// get package 
 Route::get('/get-all-package', [ProductPackageController::class, 'get_all_package']);
+
+Route::get('/get-buyer-pending-orders', [ProductPackageController::class, 'get_pending_order_package']);
+Route::get('/get-deal-of-the-day', [ProductPackageController::class, 'dealofday']);
+Route::get('/get-special-offers', [ProductPackageController::class, 'specialoffer']);
+
+Route::get('/get-singel-seller-package/{id}', [ProductPackageController::class, 'singelsellerpackage']);
+
+Route::get('/get-seller-pending-orders', [ProductPackageController::class, 'get_pending_order_seller']);
+
+
+// review  && ratting 
+
+Route::post('/send-review-reatting/{id}', [ReviewController::class, 'send_review']);
+
+
+
 // update
+
+
 Route::post('/profile-update', [AuthController::class, 'profileupdate']);
 Route::post('/package-update/{id}', [ProductPackageController::class, 'update_package']);
 
