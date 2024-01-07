@@ -79,3 +79,5 @@ get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
 send package review 
 post = https://ecommerce.sheikhit.net/api//send-review-reatting/{id}
 
+admin email = admin@gmail.com
+admin password = 123456789
