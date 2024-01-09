@@ -20,7 +20,7 @@ class ProductPackageController extends Controller
 
         $package = New ProductPackage;
             $package->user_id = $request->user()->id;
-            $package->package_name ="Winter Package";
+            $package->package_name ="medisen Package";
             $package->package_discription = "Buye the package and Enjoy the Winter";
             $package->policy_id = 1;
             $package->delivery_option_id = 1;
@@ -115,12 +115,27 @@ public function update_package(Request $request, $id){
     return response()->json(['data' => $package]);
 }
 
+
+
 public function get_package(Request $request)
 {
       $userid =$request->user()->id;
-      $package = ProductPackage::where('user_id', $userid)->with('products')->get();
+      $packages = ProductPackage::where('user_id', $userid)->with('products.productimage')->get();
     //   productimage 
-      return response()->json(['data' => $package]);
+    $packages->each(function ($package) {
+        $package->products->each(function ($product) {
+            if ($product->productimage) {
+                // Use unique to ensure each image is processed only once
+                $uniqueImages = $product->productimage->unique('id');
+
+                $uniqueImages->each(function ($image) {
+                    $image->product_image = asset($image->product_image);
+                });
+            }
+        });
+    });
+
+      return response()->json(['data' => $packages]);
 }
 
 public function get_all_package(Request $request)
@@ -145,19 +160,34 @@ public function get_all_package(Request $request)
 
 
 
-
 public function get_pending_order_package(Request $request)
 {
     $orders = Order::where('buyer_id', $request->user()->id)
-       ->where('order_status',"pending")
         ->with([
             'productPackages.products.productimage',
         ])
         ->get();
 
-    
+    // Add the app domain to the product_image path
+    $orders->each(function ($package) {
+    $package->productPackages->each(function ($package) {
+        $package->products->each(function ($product) {
+            if ($product->productimage) {
+                // Use unique to ensure each image is processed only once
+                $uniqueImages = $product->productimage->unique('id');
+
+                $uniqueImages->each(function ($image) {
+                    $image->product_image = asset($image->product_image);
+                });
+            }
+        });
+    });
+});
+
     return response()->json(['data' => $orders]);
 }
+
+
 
 
 public function get_pending_order_seller(Request $request){
@@ -168,7 +198,20 @@ public function get_pending_order_seller(Request $request){
                 'productPackages.products.productimage',
             ])
             ->get();
-    
+            $orders->each(function ($package) {
+                $package->productPackages->each(function ($package) {
+                    $package->products->each(function ($product) {
+                        if ($product->productimage) {
+                            // Use unique to ensure each image is processed only once
+                            $uniqueImages = $product->productimage->unique('id');
+            
+                            $uniqueImages->each(function ($image) {
+                                $image->product_image = asset($image->product_image);
+                            });
+                        }
+                    });
+                });
+            });
         
         return response()->json(['data' => $orders]);
 
@@ -228,6 +271,7 @@ public function specialoffer(){
               }
           });
       });
+      
       // Return the data as JSON response
       return response()->json(['data' => $packages]);
 }
