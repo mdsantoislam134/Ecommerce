@@ -86,6 +86,7 @@ post = https://ecommerce.sheikhit.net/api/send-review-reatting/{id}
 required = rating,review,
 
 
+admi
 
 admin email = admin@gmail.com
 admin password = 123456789
