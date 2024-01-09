@@ -74,8 +74,11 @@ show one seller all package
 get = https://ecommerce.sheikhit.net/api/get-singel-seller-package/{id}
 
 send package review 
+
 post = https://ecommerce.sheikhit.net/api/send-review-reatting/{id}
 required = rating,review,
+
+
 
 admin email = admin@gmail.com
 admin password = 123456789
