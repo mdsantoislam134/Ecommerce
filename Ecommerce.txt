@@ -70,14 +70,12 @@ get = https://ecommerce.sheikhit.net/api/get-buyer-pending-orders
 show seller pending order 
 get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
 
-show one seller all pending order 
-get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
-
-show seller pending order 
-get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
+show one seller all package 
+get = https://ecommerce.sheikhit.net/api/get-singel-seller-package/{id}
 
 send package review 
-post = https://ecommerce.sheikhit.net/api//send-review-reatting/{id}
+post = https://ecommerce.sheikhit.net/api/send-review-reatting/{id}
+required = rating,review,
 
 admin email = admin@gmail.com
 admin password = 123456789

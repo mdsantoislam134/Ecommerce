@@ -10,9 +10,41 @@ use App\Http\Controllers\PolicyController;
 
 
 Route::get('/', function () {
-    return view('user.home');
-})->name('home');
+    return view('seller.dashboard');
+})->name('dashboard');
 
+
+Route::get('billing', function () {
+    return view('seller.billing');
+})->name('billing');
+
+Route::get('profile', function () {
+    return view('seller.profile');
+})->name('profile');
+
+Route::get('rtl', function () {
+    return view('seller.rtl');
+})->name('rtl');
+
+Route::get('user-management', function () {
+    return view('laravel-examples/user-management');
+})->name('user-management');
+
+Route::get('tables', function () {
+    return view('seller.tables');
+})->name('tables');
+
+Route::get('virtual-reality', function () {
+    return view('seller.virtual-reality');
+})->name('virtual-reality');
+
+Route::get('static-sign-in', function () {
+    return view('seller.static-sign-in');
+})->name('sign-in');
+
+Route::get('static-sign-up', function () {
+    return view('seller.static-sign-up');
+})->name('sign-up');
 
 // Admin routes 
 
