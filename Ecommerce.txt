@@ -73,12 +73,20 @@ get = https://ecommerce.sheikhit.net/api/get-seller-pending-orders
 show one seller all package 
 get = https://ecommerce.sheikhit.net/api/get-singel-seller-package/{id}
 
+Spcial Offer all package 
+get = https://ecommerce.sheikhit.net/api/get-special-offers
+
+deal of the day all package 
+get = https://ecommerce.sheikhit.net/api/get-deal-of-the-day
+
+
 send package review 
 
 post = https://ecommerce.sheikhit.net/api/send-review-reatting/{id}
 required = rating,review,
 
 
+admi
 
 admin email = admin@gmail.com
 admin password = 123456789
