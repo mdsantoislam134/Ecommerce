@@ -81,8 +81,11 @@ get = https://ecommerce.sheikhit.net/api/get-deal-of-the-day
 
 
 send package review 
+
 post = https://ecommerce.sheikhit.net/api/send-review-reatting/{id}
 required = rating,review,
+
+
 
 admin email = admin@gmail.com
 admin password = 123456789
